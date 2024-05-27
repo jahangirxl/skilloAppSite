@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>SKILLO</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/app/style.default.css" id="theme-stylesheet">
+  <link rel="stylesheet" href="css/app/custom.css">
+  <link rel="shortcut icon" href="img/app/skilloLogo.jpeg">
+  <script src="https://kit.fontawesome.com/2d47eb49a0.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <!-- navbar-->
+  <header class="header">
+    <nav class="navbar navbar-expand-lg px-4 py-2 bg-white shadow"><a
+        class="sidebar-toggler text-gray-500 me-4 me-lg-5 lead collpaseExpand" href="#"><i
+          class="fas fa-align-left"></i></a><a class="navbar-brand fw-bold text-uppercase text-base"
+        href="index.html"><img src="img/app/skilloLogo.jpeg" class="logo"></a>
+      <ul class="ms-auto d-flex align-items-center list-unstyled mb-0">
+        <li class="nav-item">
+          <form class="ms-auto me-4 d-none d-lg-block" id="searchForm">
+            <div class="input-group input-group-sm input-group-navbar">
+              <input class="form-control" id="searchInput" type="search" placeholder="Search">
+              <button class="btn" type="button"> <i class="fas fa-search"></i></button>
+            </div>
+          </form>
+         
+        </li>
+        <li class="nav-item dropdown me-3"><a class="nav-link nav-link-icon text-gray-400 px-1" id="notifications"
+            href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="far fa-bell notifIcon"></i><span class="notification-badge bg-green"></span></a>
+          <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated text-sm" aria-labelledby="notifications"><a
+              class="dropdown-item" href="#">
+              <div class="d-flex align-items-center">
+                <div class="icon icon-sm bg-indigo text-white"><i class="fab fa-twitter"></i></div>
+                <div class="text ms-2">
+                  <p class="mb-0">You have 2 followers</p>
+                </div>
+              </div>
+            </a><a class="dropdown-item" href="#">
+              <div class="d-flex align-items-center">
+                <div class="icon icon-sm bg-green text-white"><i class="fas fa-envelope"></i></div>
+                <div class="text ms-2">
+                  <p class="mb-0">You have 6 new messages</p>
+                </div>
+              </div>
+            </a><a class="dropdown-item" href="#">
+              <div class="d-flex align-items-center">
+                <div class="icon icon-sm bg-blue text-white"><i class="fas fa-upload"></i></div>
+                <div class="text ms-2">
+                  <p class="mb-0">Server rebooted</p>
+                </div>
+              </div>
+            </a><a class="dropdown-item" href="#">
+              <div class="d-flex align-items-center">
+                <div class="icon icon-sm bg-indigo text-white"><i class="fab fa-twitter"></i></div>
+                <div class="text ms-2">
+                  <p class="mb-0">You have 2 followers</p>
+                </div>
+              </div>
+            </a>
+            <div class="dropdown-divider"></div><a class="dropdown-item text-center" href="#"><small
+                class="fw-bold text-uppercase">View all notifications</small></a>
+          </div>
+        </li>
+        <!-- Messages                        -->
+        <li class="nav-item dropdown ms-auto"><a class="nav-link pe-0" id="userInfo" href="#" data-bs-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false"><img class="avatar p-1"
+              src="img/app/user1.png" alt="User"></a>
+          <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated" aria-labelledby="userInfo">
+            <div class="dropdown-header text-gray-700">
+              <h6 class="text-uppercase font-weight-bold">Jahangir A</h6><small>HR - Recruitment</small>
+            </div>
+            <div class="dropdown-divider"></div><a class="dropdown-item" href="#">Settings</a><a class="dropdown-item"
+              href="#">Activity log </a>
+            <div class="dropdown-divider"></div><a class="dropdown-item" href="login.html">Logout</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <div class="d-flex align-items-stretch">
+    <div class="sidebar py-3" id="sidebar">
+      <!-- <h6 class="sidebar-heading">Main</h6> -->
+      <ul class="list-unstyled">
+        <ul class="sidebar-menu list-unstyled collapse show">
+          <li class="sidebar-list-item"><a class="sidebar-link active text-muted" href="#"><i
+                class="fas fa-house-user"></i> Dashboard</a></li>
+          <li class="sidebar-list-item"><a class="sidebar-link text-muted" href="#"><i
+                class="fas fa-file-signature"></i> Job Description</a></li>
+          <li class="sidebar-list-item"><a class="sidebar-link text-muted" href="#"><i class="fas fa-file-alt"></i>
+              Resume</a></li>
+          <li class="sidebar-list-item"><a class="sidebar-link text-muted" href="#"><i class="fas fa-user-plus"></i> Add
+              Vendors</a></li>
+          <li class="sidebar-list-item"><a class="sidebar-link text-muted" href="#"><i class="fas fa-vote-yea"></i>
+              Fitment</a></li>
+        </ul>
+      </ul>
+    </div>
+    <div class="page-holder bg-gray-100">
+      <div class="container-fluid px-lg-4 px-xl-5">
+        <!-- Page Header-->
+        <div class="page-header">
+          <h1 class="page-heading">Dashboard</h1>
+        </div>
+        <section class="mb-3 mb-lg-5">
+          <div class="card card-table mb-4">
+            <div class="card-header">
+              <h5 class="card-heading"> All Job Description</h5>
+             
+            </div>
+            <div class="card-body">
+              <div class="preload-wrapper">
+                <div class="table-responsive">
+                  <table class="table table-hover text-sm text-gray-700 mb-0" id="ordersDatatable">
+                    <thead>
+                      <tr>
+                        <th>JD ID</th>
+                        <th>JD Date</th>
+                        <th style="min-width: 150px;">No</th>
+                        <th>Above 80%</th>
+                        <th>Upload Resume</th>
+                        <th>Dashboard</th>
+                        <th>Fitment</th>
+                        <th>Status</th>
+                        <th>Time</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="align-middle">
+                        <td>Java 001</td>
+                        <td>20/05/2024</td>
+                        <td>
+                          <div class="d-flex align-items-center"><span class="me-2">22%</span>
+                            <div class="progress progress-table">
+                              <div class="progress-bar bg-undefined" role="progressbar" aria-valuenow="22" aria-valuemin="0" aria-valuemax="100" style="width:22%">  </div>
+                            </div>
+                          </div>
+                        </td>
+                        <td>22</td>
+                        <td>
+                          <button class="btn btn-info ladda-button mb-1" data-style="zoom-in"><span
+                              class="ladda-label">Upload</span><span class="ladda-spinner"></span></button>
+                        </td>
+                        <td> <button class="btn btn-info ladda-button mb-1" data-style="zoom-in"><span
+                              class="ladda-label">View</span><span class="ladda-spinner"></span></button></td>
+                              <td> <button class="btn btn-info ladda-button mb-1" data-style="zoom-in"><span
+                                class="ladda-label">View</span><span class="ladda-spinner"></span></button></td>
+                        <td><span class="badge badge-danger-light"> <span class="indicator"></span>Open</span></td>
+                        <td >
+                          5min Ago
+                        </td>
+                        <td>
+                          <div class="d-flex align-items-center justify-content-between">
+                            <div>
+                              <button class="btn-header-more" type="button" data-bs-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false"><i class="fas fa-ellipsis-v"></i></button>
+                              <div class="dropdown-menu dropdown-menu-end text-sm">
+                                <a class="dropdown-item" href="#!"><i
+                                    class="fas fa-expand-arrows-alt opacity-5 me-2"></i>View JD</a>
+                                <a class="dropdown-item" href="#!"><i class="far fa-edit opacity-5 me-2"></i>Edit JD</a>
+                                <a class="dropdown-item" href="#!"><i class="far fa-trash-alt opacity-5 me-2"></i>
+                                  Delete JD </a>
+                              </div>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr class="align-middle">
+                        <td>Java 001</td>
+                        <td>20/05/2024</td>
+                        <td >
+                          <div class="d-flex align-items-center"><span class="me-2">85%</span>
+                            <div class="progress progress-table">
+                              <div class="progress-bar bg-undefined" role="progressbar" aria-valuenow="85"
+                                aria-valuemin="0" aria-valuemax="100" style="width:85%"> </div>
+                            </div>
+                          </div>
+                        </td>
+                        <td>20</td>
+                        <td>
+                          <button class="btn btn-info ladda-button mb-1" data-style="zoom-in"><span
+                              class="ladda-label">Upload</span><span class="ladda-spinner"></span></button>
+                        </td>
+                        <td> <button class="btn btn-info ladda-button mb-1" data-style="zoom-in"><span
+                              class="ladda-label">View</span><span class="ladda-spinner"></span></button></td>
+                              <td> <button class="btn btn-info ladda-button mb-1" data-style="zoom-in"><span
+                                class="ladda-label">View</span><span class="ladda-spinner"></span></button></td>
+                        <td><span class="badge badge-success-light"> <span class="indicator"></span>Closed</span></td>
+                        <td >
+                          5min Ago
+                        </td>
+                        <td>
+                          <div class="d-flex align-items-center justify-content-between">
+                            <div>
+                              <button class="btn-header-more" type="button" data-bs-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false"><i class="fas fa-ellipsis-v"></i></button>
+                              <div class="dropdown-menu dropdown-menu-end text-sm">
+                                <a class="dropdown-item" href="#!"><i
+                                    class="fas fa-expand-arrows-alt opacity-5 me-2"></i>View JD</a>
+                                <a class="dropdown-item" href="#!"><i class="far fa-edit opacity-5 me-2"></i>Edit JD</a>
+                                <a class="dropdown-item" href="#!"><i class="far fa-trash-alt opacity-5 me-2"></i>
+                                  Delete JD </a>
+                              </div>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr class="align-middle">
+                        <td>Java 001</td>
+                        <td>20/05/2024</td>
+                        <td>
+                          <div class="d-flex align-items-center"><span class="me-2">90%</span>
+                            <div class="progress progress-table">
+                              <div class="progress-bar bg-undefined" role="progressbar" aria-valuenow="90"
+                                aria-valuemin="0" aria-valuemax="100" style="width:90%"> </div>
+                            </div>
+                          </div>
+                        </td>
+                        <td>20</td>
+                        <td>
+                          <button class="btn btn-info ladda-button mb-1" data-style="zoom-in"><span
+                              class="ladda-label">Upload</span><span class="ladda-spinner"></span></button>
+                        </td>
+                        <td> <button class="btn btn-info ladda-button mb-1" data-style="zoom-in"><span
+                              class="ladda-label">View</span><span class="ladda-spinner"></span></button></td>
+                              <td> <button class="btn btn-info ladda-button mb-1" data-style="zoom-in"><span
+                                class="ladda-label">View</span><span class="ladda-spinner"></span></button></td>
+                        <td><span class="badge badge-warning-light"> <span class="indicator"></span>In Progress</span></td>
+                        <td >
+                          5min Ago
+                        </td>
+                        <td>
+                          <div class="d-flex align-items-center justify-content-between">
+                            <div>
+                              <button class="btn-header-more" type="button" data-bs-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false"><i class="fas fa-ellipsis-v"></i></button>
+                              <div class="dropdown-menu dropdown-menu-end text-sm">
+                                <a class="dropdown-item" href="#!"><i
+                                    class="fas fa-expand-arrows-alt opacity-5 me-2"></i>View JD</a>
+                                <a class="dropdown-item" href="#!"><i class="far fa-edit opacity-5 me-2"></i>Edit JD</a>
+                                <a class="dropdown-item" href="#!"><i class="far fa-trash-alt opacity-5 me-2"></i>
+                                  Delete JD </a>
+                              </div>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr class="align-middle">
+                        <td>Java 001</td>
+                        <td>20/05/2024</td>
+                        <td>
+                          <div class="d-flex align-items-center"><span class="me-2">60%</span>
+                            <div class="progress progress-table">
+                              <div class="progress-bar bg-undefined" role="progressbar" aria-valuenow="60"
+                                aria-valuemin="0" aria-valuemax="100" style="width:60%"> </div>
+                            </div>
+                          </div>
+                        </td>
+                        <td>20</td>
+                        <td>
+                          <button class="btn btn-info ladda-button mb-1" data-style="zoom-in"><span
+                              class="ladda-label">Upload</span><span class="ladda-spinner"></span></button>
+                        </td>
+                        <td> <button class="btn btn-info ladda-button mb-1" data-style="zoom-in"><span
+                              class="ladda-label">View</span><span class="ladda-spinner"></span></button></td>
+                              <td> <button class="btn btn-info ladda-button mb-1" data-style="zoom-in"><span
+                                class="ladda-label">View</span><span class="ladda-spinner"></span></button></td>
+                        <td><span class="badge badge-success-light"> <span class="indicator"></span>Open</span></td>
+                        <td >
+                          5min Ago
+                        </td>
+                        <td>
+                          <div class="d-flex align-items-center justify-content-between">
+                            <div>
+                              <button class="btn-header-more" type="button" data-bs-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false"><i class="fas fa-ellipsis-v"></i></button>
+                              <div class="dropdown-menu dropdown-menu-end text-sm">
+                                <a class="dropdown-item" href="#!"><i
+                                    class="fas fa-expand-arrows-alt opacity-5 me-2"></i>View JD</a>
+                                <a class="dropdown-item" href="#!"><i class="far fa-edit opacity-5 me-2"></i>Edit JD</a>
+                                <a class="dropdown-item" href="#!"><i class="far fa-trash-alt opacity-5 me-2"></i>
+                                  Delete JD </a>
+                              </div>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr class="align-middle">
+                        <td>Java 001</td>
+                        <td>20/05/2024</td>
+                        <td>
+                          <div class="d-flex align-items-center"><span class="me-2">77%</span>
+                            <div class="progress progress-table">
+                              <div class="progress-bar bg-undefined" role="progressbar" aria-valuenow="77"
+                                aria-valuemin="0" aria-valuemax="100" style="width:77%"> </div>
+                            </div>
+                          </div>
+                        </td>
+                        <td>20</td>
+                        <td>
+                          <button class="btn btn-info ladda-button mb-1" data-style="zoom-in"><span
+                              class="ladda-label">Upload</span><span class="ladda-spinner"></span></button>
+                        </td>
+                        <td> <button class="btn btn-info ladda-button mb-1" data-style="zoom-in"><span
+                              class="ladda-label">View</span><span class="ladda-spinner"></span></button></td>
+                              <td> <button class="btn btn-info ladda-button mb-1" data-style="zoom-in"><span
+                                class="ladda-label">View</span><span class="ladda-spinner"></span></button></td>
+                        <td><span class="badge badge-success-light"> <span class="indicator"></span>Open</span></td>
+                        <td >
+                          5min Ago
+                        </td>
+                        <td>
+                          <div class="d-flex align-items-center justify-content-between">
+                            <div>
+                              <button class="btn-header-more" type="button" data-bs-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false"><i class="fas fa-ellipsis-v"></i></button>
+                              <div class="dropdown-menu dropdown-menu-end text-sm">
+                                <a class="dropdown-item" href="#!"><i
+                                    class="fas fa-expand-arrows-alt opacity-5 me-2"></i>View JD</a>
+                                <a class="dropdown-item" href="#!"><i class="far fa-edit opacity-5 me-2"></i>Edit JD</a>
+                                <a class="dropdown-item" href="#!"><i class="far fa-trash-alt opacity-5 me-2"></i>
+                                  Delete JD </a>
+                              </div>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr class="align-middle">
+                        <td>Java 001</td>
+                        <td>20/05/2024</td>
+                        <td>
+                          <div class="d-flex align-items-center"><span class="me-2">77%</span>
+                            <div class="progress progress-table">
+                              <div class="progress-bar bg-undefined" role="progressbar" aria-valuenow="77"
+                                aria-valuemin="0" aria-valuemax="100" style="width:77%"> </div>
+                            </div>
+                          </div>
+                        </td>
+                        <td>20</td>
+                        <td>
+                          <button class="btn btn-info ladda-button mb-1" data-style="zoom-in"><span
+                              class="ladda-label">Upload</span><span class="ladda-spinner"></span></button>
+                        </td>
+                        <td> <button class="btn btn-info ladda-button mb-1" data-style="zoom-in"><span
+                              class="ladda-label">View</span><span class="ladda-spinner"></span></button></td>
+                              <td> <button class="btn btn-info ladda-button mb-1" data-style="zoom-in"><span
+                                class="ladda-label">View</span><span class="ladda-spinner"></span></button></td>
+                        <td><span class="badge badge-success-light"> <span class="indicator"></span>Open</span></td>
+                        <td >
+                          5min Ago
+                        </td>
+                        <td>
+                          <div class="d-flex align-items-center justify-content-between">
+                            <div>
+                              <button class="btn-header-more" type="button" data-bs-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false"><i class="fas fa-ellipsis-v"></i></button>
+                              <div class="dropdown-menu dropdown-menu-end text-sm">
+                                <a class="dropdown-item" href="#!"><i
+                                    class="fas fa-expand-arrows-alt opacity-5 me-2"></i>View JD</a>
+                                <a class="dropdown-item" href="#!"><i class="far fa-edit opacity-5 me-2"></i>Edit JD</a>
+                                <a class="dropdown-item" href="#!"><i class="far fa-trash-alt opacity-5 me-2"></i>
+                                  Delete JD </a>
+                              </div>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr class="align-middle">
+                        <td>Java 001</td>
+                        <td>20/05/2024</td>
+                        <td>
+                          <div class="d-flex align-items-center"><span class="me-2">77%</span>
+                            <div class="progress progress-table">
+                              <div class="progress-bar bg-undefined" role="progressbar" aria-valuenow="77"
+                                aria-valuemin="0" aria-valuemax="100" style="width:77%"> </div>
+                            </div>
+                          </div>
+                        </td>
+                        <td>20</td>
+                        <td>
+                          <button class="btn btn-info ladda-button mb-1" data-style="zoom-in"><span
+                              class="ladda-label">Upload</span><span class="ladda-spinner"></span></button>
+                        </td>
+                        <td> <button class="btn btn-info ladda-button mb-1" data-style="zoom-in"><span
+                              class="ladda-label">View</span><span class="ladda-spinner"></span></button></td>
+                              <td> <button class="btn btn-info ladda-button mb-1" data-style="zoom-in"><span
+                                class="ladda-label">View</span><span class="ladda-spinner"></span></button></td>
+                        <td><span class="badge badge-success-light"> <span class="indicator"></span>Open</span></td>
+                        <td >
+                          5min Ago
+                        </td>
+                        <td>
+                          <div class="d-flex align-items-center justify-content-between">
+                            <div>
+                              <button class="btn-header-more" type="button" data-bs-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false"><i class="fas fa-ellipsis-v"></i></button>
+                              <div class="dropdown-menu dropdown-menu-end text-sm">
+                                <a class="dropdown-item" href="#!"><i
+                                    class="fas fa-expand-arrows-alt opacity-5 me-2"></i>View JD</a>
+                                <a class="dropdown-item" href="#!"><i class="far fa-edit opacity-5 me-2"></i>Edit JD</a>
+                                <a class="dropdown-item" href="#!"><i class="far fa-trash-alt opacity-5 me-2"></i>
+                                  Delete JD </a>
+                              </div>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr class="align-middle">
+                        <td>Java 001</td>
+                        <td>20/05/2024</td>
+                        <td>
+                          <div class="d-flex align-items-center"><span class="me-2">77%</span>
+                            <div class="progress progress-table">
+                              <div class="progress-bar bg-undefined" role="progressbar" aria-valuenow="77"
+                                aria-valuemin="0" aria-valuemax="100" style="width:77%"> </div>
+                            </div>
+                          </div>
+                        </td>
+                        <td>20</td>
+                        <td>
+                          <button class="btn btn-info ladda-button mb-1" data-style="zoom-in"><span
+                              class="ladda-label">Upload</span><span class="ladda-spinner"></span></button>
+                        </td>
+                        <td> <button class="btn btn-info ladda-button mb-1" data-style="zoom-in"><span
+                              class="ladda-label">View</span><span class="ladda-spinner"></span></button></td>
+                              <td> <button class="btn btn-info ladda-button mb-1" data-style="zoom-in"><span
+                                class="ladda-label">View</span><span class="ladda-spinner"></span></button></td>
+                        <td><span class="badge badge-success-light"> <span class="indicator"></span>Open</span></td>
+                        <td >
+                          5min Ago
+                        </td>
+                        <td>
+                          <div class="d-flex align-items-center justify-content-between">
+                            <div>
+                              <button class="btn-header-more" type="button" data-bs-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false"><i class="fas fa-ellipsis-v"></i></button>
+                              <div class="dropdown-menu dropdown-menu-end text-sm">
+                                <a class="dropdown-item" href="#!"><i
+                                    class="fas fa-expand-arrows-alt opacity-5 me-2"></i>View JD</a>
+                                <a class="dropdown-item" href="#!"><i class="far fa-edit opacity-5 me-2"></i>Edit JD</a>
+                                <a class="dropdown-item" href="#!"><i class="far fa-trash-alt opacity-5 me-2"></i>
+                                  Delete JD </a>
+                              </div>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr class="align-middle">
+                        <td>Java 001</td>
+                        <td>20/05/2024</td>
+                        <td>
+                          <div class="d-flex align-items-center"><span class="me-2">77%</span>
+                            <div class="progress progress-table">
+                              <div class="progress-bar bg-undefined" role="progressbar" aria-valuenow="77"
+                                aria-valuemin="0" aria-valuemax="100" style="width:77%"> </div>
+                            </div>
+                          </div>
+                        </td>
+                        <td>20</td>
+                        <td>
+                          <button class="btn btn-info ladda-button mb-1" data-style="zoom-in"><span
+                              class="ladda-label">Upload</span><span class="ladda-spinner"></span></button>
+                        </td>
+                        <td> <button class="btn btn-info ladda-button mb-1" data-style="zoom-in"><span
+                              class="ladda-label">View</span><span class="ladda-spinner"></span></button></td>
+                              <td> <button class="btn btn-info ladda-button mb-1" data-style="zoom-in"><span
+                                class="ladda-label">View</span><span class="ladda-spinner"></span></button></td>
+                        <td><span class="badge badge-success-light"> <span class="indicator"></span>Open</span></td>
+                        <td >
+                          5min Ago
+                        </td>
+                        <td>
+                          <div class="d-flex align-items-center justify-content-between">
+                            <div>
+                              <button class="btn-header-more" type="button" data-bs-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false"><i class="fas fa-ellipsis-v"></i></button>
+                              <div class="dropdown-menu dropdown-menu-end text-sm">
+                                <a class="dropdown-item" href="#!"><i
+                                    class="fas fa-expand-arrows-alt opacity-5 me-2"></i>View JD</a>
+                                <a class="dropdown-item" href="#!"><i class="far fa-edit opacity-5 me-2"></i>Edit JD</a>
+                                <a class="dropdown-item" href="#!"><i class="far fa-trash-alt opacity-5 me-2"></i>
+                                  Delete JD </a>
+                              </div>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr class="align-middle">
+                        <td>Java 001</td>
+                        <td>20/05/2024</td>
+                        <td>
+                          <div class="d-flex align-items-center"><span class="me-2">77%</span>
+                            <div class="progress progress-table">
+                              <div class="progress-bar bg-undefined" role="progressbar" aria-valuenow="77"
+                                aria-valuemin="0" aria-valuemax="100" style="width:77%"> </div>
+                            </div>
+                          </div>
+                        </td>
+                        <td>20</td>
+                        <td>
+                          <button class="btn btn-info ladda-button mb-1" data-style="zoom-in"><span
+                              class="ladda-label">Upload</span><span class="ladda-spinner"></span></button>
+                        </td>
+                        <td> <button class="btn btn-info ladda-button mb-1" data-style="zoom-in"><span
+                              class="ladda-label">View</span><span class="ladda-spinner"></span></button></td>
+                              <td> <button class="btn btn-info ladda-button mb-1" data-style="zoom-in"><span
+                                class="ladda-label">View</span><span class="ladda-spinner"></span></button></td>
+                        <td><span class="badge badge-success-light"> <span class="indicator"></span>Open</span></td>
+                        <td >
+                          5min Ago
+                        </td>
+                        <td>
+                          <div class="d-flex align-items-center justify-content-between">
+                            <div>
+                              <button class="btn-header-more" type="button" data-bs-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false"><i class="fas fa-ellipsis-v"></i></button>
+                              <div class="dropdown-menu dropdown-menu-end text-sm">
+                                <a class="dropdown-item" href="#!"><i
+                                    class="fas fa-expand-arrows-alt opacity-5 me-2"></i>View JD</a>
+                                <a class="dropdown-item" href="#!"><i class="far fa-edit opacity-5 me-2"></i>Edit JD</a>
+                                <a class="dropdown-item" href="#!"><i class="far fa-trash-alt opacity-5 me-2"></i>
+                                  Delete JD </a>
+                              </div>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr class="align-middle">
+                        <td>Java 001</td>
+                        <td>20/05/2024</td>
+                        <td>
+                          <div class="d-flex align-items-center"><span class="me-2">77%</span>
+                            <div class="progress progress-table">
+                              <div class="progress-bar bg-undefined" role="progressbar" aria-valuenow="77"
+                                aria-valuemin="0" aria-valuemax="100" style="width:77%"> </div>
+                            </div>
+                          </div>
+                        </td>
+                        <td>20</td>
+                        <td>
+                          <button class="btn btn-info ladda-button mb-1" data-style="zoom-in"><span
+                              class="ladda-label">Upload</span><span class="ladda-spinner"></span></button>
+                        </td>
+                        <td> <button class="btn btn-info ladda-button mb-1" data-style="zoom-in"><span
+                              class="ladda-label">View</span><span class="ladda-spinner"></span></button></td>
+                              <td> <button class="btn btn-info ladda-button mb-1" data-style="zoom-in"><span
+                                class="ladda-label">View</span><span class="ladda-spinner"></span></button></td>
+                        <td><span class="badge badge-success-light"> <span class="indicator"></span>Open</span></td>
+                        <td >
+                          5min Ago
+                        </td>
+                        <td>
+                          <div class="d-flex align-items-center justify-content-between">
+                            <div>
+                              <button class="btn-header-more" type="button" data-bs-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false"><i class="fas fa-ellipsis-v"></i></button>
+                              <div class="dropdown-menu dropdown-menu-end text-sm">
+                                <a class="dropdown-item" href="#!"><i
+                                    class="fas fa-expand-arrows-alt opacity-5 me-2"></i>View JD</a>
+                                <a class="dropdown-item" href="#!"><i class="far fa-edit opacity-5 me-2"></i>Edit JD</a>
+                                <a class="dropdown-item" href="#!"><i class="far fa-trash-alt opacity-5 me-2"></i>
+                                  Delete JD </a>
+                              </div>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr class="align-middle">
+                        <td>Java 001</td>
+                        <td>20/05/2024</td>
+                        <td>
+                          <div class="d-flex align-items-center"><span class="me-2">77%</span>
+                            <div class="progress progress-table">
+                              <div class="progress-bar bg-undefined" role="progressbar" aria-valuenow="77"
+                                aria-valuemin="0" aria-valuemax="100" style="width:77%"> </div>
+                            </div>
+                          </div>
+                        </td>
+                        <td>20</td>
+                        <td>
+                          <button class="btn btn-info ladda-button mb-1" data-style="zoom-in"><span
+                              class="ladda-label">Upload</span><span class="ladda-spinner"></span></button>
+                        </td>
+                        <td> <button class="btn btn-info ladda-button mb-1" data-style="zoom-in"><span
+                              class="ladda-label">View</span><span class="ladda-spinner"></span></button></td>
+                              <td> <button class="btn btn-info ladda-button mb-1" data-style="zoom-in"><span
+                                class="ladda-label">View</span><span class="ladda-spinner"></span></button></td>
+                        <td><span class="badge badge-success-light"> <span class="indicator"></span>Open</span></td>
+                        <td >
+                          5min Ago
+                        </td>
+                        <td>
+                          <div class="d-flex align-items-center justify-content-between">
+                            <div>
+                              <button class="btn-header-more" type="button" data-bs-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false"><i class="fas fa-ellipsis-v"></i></button>
+                              <div class="dropdown-menu dropdown-menu-end text-sm">
+                                <a class="dropdown-item" href="#!"><i
+                                    class="fas fa-expand-arrows-alt opacity-5 me-2"></i>View JD</a>
+                                <a class="dropdown-item" href="#!"><i class="far fa-edit opacity-5 me-2"></i>Edit JD</a>
+                                <a class="dropdown-item" href="#!"><i class="far fa-trash-alt opacity-5 me-2"></i>
+                                  Delete JD </a>
+                              </div>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div><span class="me-2" id="categoryBulkActionOrders">
+                  <select class="form-select form-select-sm d-inline w-auto" name="categoryBulkAction">
+                    <option>Bulk Actions</option>
+                    <option>Delete</option>
+                  </select>
+                  <button class="btn btn-sm btn-outline-primary align-top">Apply </button></span>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <footer class="footer bg-white shadow align-self-end py-3 px-xl-5 w-100">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-6 text-center text-md-start fw-bold">
+              <p class="mb-2 mb-md-0 fw-bold">Antern Technology &copy; 2024</p>
+            </div>
+            <div class="col-md-6 text-center text-md-end text-gray-400">
+              <p class="mb-0">Version 1.0.0</p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+  <script src="js/app/bootstrap.bundle.min.js"></script>
+  <script src="js/app/simple-datatables.js"></script>
+  <script src="js/app/default-datable.js"></script>
+  <script src="js/app/theme.js"></script>
+</body>
+</html>
