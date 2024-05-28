@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,48 +12,8 @@
   <link rel="stylesheet" href="css/app/custom.css">
   <link rel="shortcut icon" href="img/app/skilloLogo.jpeg">
   <script src="https://kit.fontawesome.com/2d47eb49a0.js" crossorigin="anonymous"></script>
-
-
-
-
-
-  <!-- Include base CSS (optional) -->
-  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/base.min.css" /> -->
-  <!-- Or versioned -->
-  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js@9.0.1/public/assets/styles/base.min.css" /> -->
-
-  <!-- Include Choices CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" />
-  <!-- Or versioned -->
-  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js@9.0.1/public/assets/styles/choices.min.css" /> -->
-
-  <!-- Include Choices JavaScript (latest) -->
-  <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
-  <!-- Or versioned -->
-  <!-- <script src="https://cdn.jsdelivr.net/npm/choices.js@9.0.1/public/assets/scripts/choices.min.js"></script> -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  <link rel="stylesheet" href="css/app/choices.min.css" />
 </head>
-
 <body>
   <!-- navbar-->
   <header class="header">
@@ -70,7 +29,6 @@
               <button class="btn" type="button"> <i class="fas fa-search"></i></button>
             </div>
           </form>
-
         </li>
         <li class="nav-item dropdown me-3"><a class="nav-link nav-link-icon text-gray-400 px-1" id="notifications"
             href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -151,7 +109,6 @@
           <div class="card mb-4">
             <div class="card-header">
               <h5 class="card-heading"> All Job Description</h5>
-
             </div>
             <div class="card-body">
               <div class="row">
@@ -159,15 +116,10 @@
                   <form class="dropzone" id="demo-upload" action="#">
                     <div class="dz-message">
                       <p>Drop files here or click to upload.</p>
-
                     </div>
                   </form>
                 </div>
               </div>
-
-             
-
-
               <div class="row">
                 <div class="col-xl-12">
                   <form class="form-horizontal">
@@ -188,7 +140,9 @@
                       <label class="col-sm-3 form-label">Password</label>
                       <div class="col-md-9">
                         <textarea class="jd-textarea"></textarea>
-                        <small class="form-text text-muted "><span><a href="#">JAVA</a></span> <span><a href="#">Angular</a></span> <span><a href="#">React</a></span> <span><a href="#">Full Stack</a></span></small>
+                        <small class="form-text text-muted "><span><a href="#">JAVA</a></span> <span><a
+                              href="#">Angular</a></span> <span><a href="#">React</a></span> <span><a href="#">Full
+                              Stack</a></span></small>
                       </div>
                     </div>
                     <div class="row mb-3">
@@ -198,11 +152,7 @@
                     </div>
                   </form>
                 </div>
-
               </div>
-
-
-
             </div>
           </div>
         </section>
@@ -226,26 +176,22 @@
   <script src="js/app/theme.js"></script>
   <script src="js/app/dropzone.js"></script>
   <script src="js/app/forms-dropzone.js"></script>
-
   <script>
     const choices = new Choices(document.querySelector(".choices-1"), {
-    placeholder: true,
-    searchPlaceholderValue: "Search",
-    itemSelectText: "Select",
-});
-
-const textRemove = new Choices(document.getElementById("choices-text-remove-button"), {
-    delimiter: ",",
-    editItems: true,
-    maxItemCount: 5,
-    removeItemButton: true,
-});
-
-const multipleChoices = new Choices("#choices-multiple", {
-    removeItemButton: true,
-});
+      placeholder: true,
+      searchPlaceholderValue: "Search",
+      itemSelectText: "Select",
+    });
+    const textRemove = new Choices(document.getElementById("choices-text-remove-button"), {
+      delimiter: ",",
+      editItems: true,
+      maxItemCount: 5,
+      removeItemButton: true,
+    });
+    const multipleChoices = new Choices("#choices-multiple", {
+      removeItemButton: true,
+    });
   </script>
-
+  <script src="js/app/choices.min.js"></script>
 </body>
-
 </html>
