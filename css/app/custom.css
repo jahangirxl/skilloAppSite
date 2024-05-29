@@ -47,3 +47,6 @@
     resize: none;
 
 }
+.card-header-title{
+    padding-left: 0;
+}
