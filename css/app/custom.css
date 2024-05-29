@@ -47,6 +47,11 @@
     resize: none;
 
 }
+.card-heading{
+    font-weight: 500;
+    color: #000;
+}
 .card-header-title{
     padding-left: 0;
+    
 }
