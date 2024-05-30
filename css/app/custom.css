@@ -55,3 +55,10 @@
     padding-left: 0;
     
 }
+.choices__list--dropdown, .choices__list[aria-expanded]{
+    z-index: 9 !important;
+}
+.downloadList{
+    float: right;
+    color: #ee3a6a !important;
+}

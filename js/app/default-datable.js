@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
         ],
         perPage: 5,
     });
+    
 
     // Add Bulk Actions Select & Bootstrap styles to the elements
     // in the header
