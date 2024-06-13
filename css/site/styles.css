@@ -3405,7 +3405,7 @@ span.noti-status {
 .hero-search h1 {
     text-transform: capitalize;
     color: #022f5d !important;
-	font-size:35px;
+	font-size:32px;
 }
 
 .hero-banner.dark-text h1, .hero-banner.dark-text p, .hero-banner.dark-text h1, .hero-banner.dark-text  p{
@@ -4439,6 +4439,7 @@ ul.shorting-list li a:hover, ul.shorting-list li a:focus, ul.shorting-list li a.
     align-items: center;
     width: 100%;
     padding: 20px;
+    justify-content: center;
 }
 .instructor-students {
     flex: 1;
@@ -9900,7 +9901,7 @@ footer.skin-dark-footer .footer-widget .ftp-info {
 		min-height: 580px;
 	}
 	.hero-search h1 {
-		font-size:40px;
+		font-size:32px;
 	}
 	h1, .h1 {
 		font-size:3.5em;
@@ -10221,7 +10222,7 @@ footer.skin-dark-footer .footer-widget .ftp-info {
 
 @media (max-width: 767px) {
 	.hero-search h1 {
-		font-size: 25px;
+		font-size: 22px;
 	}
 	h1 {
 		line-height:35px;
