@@ -13,7 +13,8 @@
     width: 140px;
 }
 .sidebar-menu .sidebar-link.active {
-    background: #0091ae;
+    background: #215ddc;
+    background-image: linear-gradient(to right, #215ddc, #01c2ff);
 }
 .collpaseExpand{
     color: #ee3a6a !important;
@@ -61,4 +62,9 @@
 .downloadList{
     float: right;
     color: #ee3a6a !important;
+}
+
+.btn-info{
+    background: #215ddc;
+    background-image: linear-gradient(#215ddc, #01c2ff);
 }
